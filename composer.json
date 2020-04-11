@@ -1,0 +1,27 @@
+{
+    "name": "fghazaleh/string",
+    "description": "String PHP class",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fghazaleh",
+            "email": "franco.ghazaleh@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "FGhazaleh\\Support\\String\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FGhazaleh\\Support\\String\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    }
+}
