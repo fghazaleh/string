@@ -76,9 +76,9 @@ class StrTest extends TestCase
     {
         $str = new Str('Franco');
 
-        $this->assertSame('Franco Ghazaleh',$str->after(' Ghazaleh')->toString());
+        $this->assertSame('Franco Ghazaleh',$str->appendAfter(' Ghazaleh')->toString());
 
-        $this->assertSame('Awesome Franco',$str->before('Awesome ')->toString());
+        $this->assertSame('Awesome Franco',$str->appendBefore('Awesome ')->toString());
     }
 
     /**
@@ -132,5 +132,19 @@ class StrTest extends TestCase
         $this->assertSame(11,$str->lastIndexOf('a'));
 
         $this->assertSame(-1,$str->lastIndexOf('GG'));
+    }
+
+    /**
+     * @test
+     */
+    public function testingStartsWithAndEndsWith()
+    {
+        $str = new Str('Franco Ghazaleh');
+
+        $this->assertTrue($str->startsWith('F'));
+        $this->assertFalse($str->startsWith('a'));
+
+        $this->assertTrue($str->endsWith('h'));
+        $this->assertFalse($str->endsWith('z'));
     }
 }

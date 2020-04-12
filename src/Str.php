@@ -84,15 +84,17 @@ class Str implements \ArrayAccess
         );
     }
 
-    public function after(string $value):self
+    public function appendAfter(string $value):self
     {
         return new static($this->value.$value);
     }
 
-    public function before(string $value):self
+    public function appendBefore(string $value):self
     {
         return new static($value.$this->value);
     }
+
+
 
     public function reverse():self
     {
@@ -102,6 +104,16 @@ class Str implements \ArrayAccess
     }
 
     /* ----------- */
+
+    public function startsWith(string $value):bool
+    {
+        return ($value !== '' && strncmp($this->value, $value, strlen($value)) === 0);
+    }
+
+    public function endsWith(string $value):bool
+    {
+        return $value !== '' && substr($this->value, -strlen($value)) === $value;
+    }
 
     public function indexOf(string $find,int $offset = 0):int
     {
